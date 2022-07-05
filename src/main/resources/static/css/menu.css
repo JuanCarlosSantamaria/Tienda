@@ -14,7 +14,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; 
+    width: 100%;
 }
 
 .nav {
@@ -27,14 +27,14 @@ body {
 .nav-link {
     color: white;
     text-decoration: none;
-    
+
 }
 
 .logo {
     font-size: 30px;
     font-weight: bold;
     padding: 0 40px;
-    line-height: 12vh;   
+    line-height: 12vh;
 }
 
 .nav-menu {
@@ -50,11 +50,32 @@ body {
 }
 
 .nav-menu-item:hover {
-    background-color: navy;
-    transition: 0.5s;
+    font-size: 22px;
+    background-color: cornflowerblue;
+    transition: 1s;
 }
 
 .nav-menu-link {
-   padding: 6px 12px;
-   border-radius: 4px;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 20px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.contenido{
+    background-color: wheat;
+    position: fixed;
+    top: 80px;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    overflow: auto;
 }
