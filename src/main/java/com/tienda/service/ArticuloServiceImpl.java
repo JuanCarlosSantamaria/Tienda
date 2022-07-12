@@ -22,7 +22,7 @@ public class ArticuloServiceImpl implements ArticuloService {
         
         if(activo)
         {
-            lista.removeIf(e -> e.isActivo());
+            lista.removeIf(e -> !e.isActivo());
         }
         
         return lista;
