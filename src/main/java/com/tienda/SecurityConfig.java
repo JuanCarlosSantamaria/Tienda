@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     //El siguiente metodo funciona para hacer la autenticacion del usuario
-    @Override
+    /*@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("admin")
@@ -25,8 +25,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("user")
                 .password("{noop}123")
                 .roles("USER");                
+    }*/
+     //El siguiente método funciona para hacer la auttenticación del usuario
+   @Override
+   protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+        auth.inMemoryAuthentication()
+                .withUser("juan")
+                    .password("{noop}123")
+                    .roles("ADMIN","VENDEDOR","USER")
+                .and()
+                .withUser("rebeca")
+                    .password("{noop}123")
+                    .roles("VENDEDOR","USER")
+                .and()
+                .withUser("pedro")
+                    .password("{noop}123")
+                    .roles("USER");
     }
-    
+  
     //Definir config accesos
     @Override
     protected void configure(HttpSecurity http)throws Exception {

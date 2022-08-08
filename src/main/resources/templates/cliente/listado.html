@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:sec="http://thymeleaf/org/extras/spring-security">
-    <head>
+    <head th:replace="layout/plantilla :: head">
         <title>techShop</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link th:href="@{/css/menu.css}" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
+        <header th:replace="layout/plantilla :: header" />
+
+        <section th:replace="cliente/fragmentosCliente :: botonesAgregar"/>
+        <section th:replace="cliente/fragmentosCliente :: agregarCliente"/>
+        <section th:replace="cliente/fragmentosCliente :: listadoClientes"/>
+
+        <section class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cliente/reporteClientes}"
+                           class="btn btn-primary">
+                            <i class="fas fa-file"></i> Reporte</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer th:replace="layout/plantilla :: footer" />
+    </body>
+</html>
+
+<!-- <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
             <h2>Listado de Clientes</h2>
             <a th:href="@{/cliente/nuevo}">Nuevo cliente</a>
@@ -41,6 +63,4 @@
                 No tenemos lista de clientes para mostrar.
             </div>
         </div>
-        <footer th:replace="layout/plantilla :: footer" />
-    </body>
-</html>
+        <footer th:replace="layout/plantilla :: footer" /> -->
