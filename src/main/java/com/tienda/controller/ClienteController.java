@@ -61,7 +61,7 @@ public class ClienteController {
     @Autowired
     private ClienteReportService clienteReportService;
 
-    @GetMapping(value = "/cliente/ReporteClientes", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(value = "/cliente/reporteClientes", produces = MediaType.APPLICATION_PDF_VALUE)
     public @ResponseBody
     byte[] getFile() throws IOException {
         try {
